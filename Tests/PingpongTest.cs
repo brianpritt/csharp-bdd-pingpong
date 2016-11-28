@@ -30,5 +30,17 @@ namespace Pingpong
       //Assert
       Assert.Equal(pingList, pings);
     }
+    [Fact]
+    public void PingpongGenerator_MakesPong_true()
+    {
+      //Arrange
+      List<string> pongList = new List<string>{"1","2","ping","4","pong"};
+      PingpongGenerator TestPong = new PingpongGenerator(5);
+      //Act
+      List<string> pongs = TestPong.CreateList();
+
+      //Assert
+      Assert.Equal(pongList, pongs);
+    }
   }
 }

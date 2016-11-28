@@ -18,7 +18,11 @@ namespace Pingpong
       {
         if (i % 3 == 0)
         {
-        _pingsAndPongs.Add("ping");
+          _pingsAndPongs.Add("ping");
+        }
+        else if (i % 5 == 0)
+        {
+          _pingsAndPongs.Add("pong");
         }
         else
         {
