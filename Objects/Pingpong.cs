@@ -16,7 +16,11 @@ namespace Pingpong
       List<string> _pingsAndPongs = new List<string>{};
       for (int i=1; i<=_upperLimit; i++)
       {
-        if (i % 3 == 0)
+        if (i % 15 == 0)
+        {
+          _pingsAndPongs.Add("ping-pong");
+        }
+        else if (i % 3 == 0)
         {
           _pingsAndPongs.Add("ping");
         }
