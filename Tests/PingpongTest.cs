@@ -1,5 +1,6 @@
 using Xunit;
 using System.Collections.Generic;
+using System;
 namespace Pingpong
 {
   public class PingpongTest
@@ -8,15 +9,26 @@ namespace Pingpong
     public void PingpongGenerator_ListCreation_true()
     {
       //Arrange
-      int input = 2;
-      List<int> expectedList = new List<int>{1, 2};
+      List<string> expectedList = new List<string>{"1","2"};
       PingpongGenerator TestClass = new PingpongGenerator(2);
 
       //Act
-      List<int> result = TestClass.CreateList();
+      List<string> result = TestClass.CreateList();
 
       //Assert
       Assert.Equal(expectedList, result);
+    }
+    [Fact]
+    public void PingpongGenerator_MakesPing_true()
+    {
+      //Arrange
+      List<string> pingList = new List<string>{"1","2","ping","4"};
+      PingpongGenerator TestPing = new PingpongGenerator(4);
+      //Act
+      List<string> pings = TestPing.CreateList();
+
+      //Assert
+      Assert.Equal(pingList, pings);
     }
   }
 }

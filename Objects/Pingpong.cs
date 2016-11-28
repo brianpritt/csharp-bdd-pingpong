@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace Pingpong
 {
@@ -10,12 +11,19 @@ namespace Pingpong
     {
       _upperLimit = input;
     }
-    public List<int> CreateList()
+    public List<string> CreateList()
     {
-      List<int> _pingsAndPongs = new List<int>{};
+      List<string> _pingsAndPongs = new List<string>{};
       for (int i=1; i<=_upperLimit; i++)
       {
-        _pingsAndPongs.Add(i);
+        if (i % 3 == 0)
+        {
+        _pingsAndPongs.Add("ping");
+        }
+        else
+        {
+          _pingsAndPongs.Add(i.ToString());
+        }
       }
       return _pingsAndPongs;
     }
